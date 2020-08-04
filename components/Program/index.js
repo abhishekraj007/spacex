@@ -14,36 +14,36 @@ const Program = (props) => {
       <div className="card">
         {/* Thumbnail */}
         <figure className="program-image">
-          <img src={mission_patch_small || placeholderImg} alt="" />
+          <img src={mission_patch_small || placeholderImg} alt={mission_name} />
         </figure>
 
         {/* Mission name  */}
-        {mission_name}
+        <h2 className="program-name">{mission_name}</h2>
 
         {/* Mission Ids  */}
         {mission_id.length > 0 ? (
-          <>
-            <div>Mission Ids: </div>
+          <p>
+            <strong>Mission Ids: </strong>
             <ul>
               {mission_id.map((id) => {
                 return <li key={id}>{id}</li>;
               })}
             </ul>
-          </>
+          </p>
         ) : null}
 
         {/* Launch Year  */}
-        <div>
+        <p>
           <strong>Lanuch Year: </strong> {launch_year}
-        </div>
+        </p>
         {/* Launch Success  */}
-        <div>
+        <p>
           <strong>Successful Launch: </strong> <span>{launch_success}</span>
-        </div>
+        </p>
         {/* Launch Success  */}
-        <div>
+        <p>
           <strong>Successful Landing: </strong> {land_success}
-        </div>
+        </p>
       </div>
     </li>
   );

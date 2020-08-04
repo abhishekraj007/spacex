@@ -1,3 +1,4 @@
+@import "./variables.scss";
 
 .card {
   flex-basis: 45%;
@@ -7,28 +8,12 @@
   text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
+  background-color: white;
+  height: 100%;
   transition: color 0.3s ease, border-color 0.3s ease;
+  box-shadow: $box-shadow;
 }
 
 li.card {
-    list-style: none;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h3 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5
-
+  list-style: none;
 }

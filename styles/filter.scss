@@ -1,11 +1,35 @@
-.btn-group,
-.btn-group-vertical {
-  display: flex;
-  flex-wrap: wrap;
+@import "./variables.scss";
 
-  > label {
-    margin: 0 1rem 1rem 0 !important;
-    display: inline-flex;
-    justify-content: center;
+.filter-view {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 4px;
+
+  @media (min-width: $tablet) {
+    width: 220px;
+    box-shadow: $box-shadow;
+  }
+}
+
+.filter-group-header {
+  margin-bottom: 0.75rem;
+  padding: 1rem 1rem 0.5rem 0;
+  border-bottom: 1px solid rgba($color: #000000, $alpha: 0.5);
+  color: rgba($color: #000000, $alpha: 0.65);
+  font-size: 14px;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+
+  h4 {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  a {
+    font-size: 14px;
+    color: red;
   }
 }

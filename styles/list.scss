@@ -1,0 +1,94 @@
+@import "./variables.scss";
+
+.list-view {
+  @media (min-width: $tablet) {
+    width: calc(100% - 220px);
+  }
+}
+
+.programs-list {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 1rem 0;
+
+  @media (min-width: $tablet) {
+    padding: 0;
+    position: relative;
+    top: -0.5rem;
+    right: -0.5rem;
+  }
+
+  .loader {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 11;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 200px;
+    }
+  }
+}
+
+.program-item {
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none;
+  flex: 1 0 100%;
+
+  @media (min-width: $tablet) {
+    padding: 0.5rem;
+    flex: 1 0 50%;
+  }
+
+  @media (min-width: $desktop) {
+    flex: 1 0 25%;
+  }
+
+  p {
+    font-size: 14px;
+    margin: 0 0 0.5rem 0;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 2rem;
+  }
+
+  li {
+    margin-top: 0.5rem;
+  }
+}
+
+.program-name {
+  font-size: 16px;
+  color: #4c5491;
+}
+
+.program-image {
+  text-align: center;
+  background-color: $body-bg;
+  margin: 0 0 1rem 0;
+
+  img {
+    max-width: 100%;
+    height: 140px;
+
+    @media (min-width: $desktop) {
+      height: 180px;
+    }
+  }
+}
+
+.no-result-found {
+  width: 100%;
+  margin-top: 2rem;
+  text-align: center;
+}

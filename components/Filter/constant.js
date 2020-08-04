@@ -13,6 +13,13 @@ export const YEARS = [
   2017,
 ];
 
+export const INITIAL_FILTER_STATE = {
+  filterApplied: false,
+  year: null,
+  launch_success: null,
+  land_success: null,
+};
+
 export const SUCCESS_PARAMS = [
   { name: "True", value: true },
   { name: "False", value: false },
