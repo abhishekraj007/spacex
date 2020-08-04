@@ -1,0 +1,11 @@
+.btn-group,
+.btn-group-vertical {
+  display: flex;
+  flex-wrap: wrap;
+
+  > label {
+    margin: 0 1rem 1rem 0 !important;
+    display: inline-flex;
+    justify-content: center;
+  }
+}
