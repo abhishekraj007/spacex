@@ -58,8 +58,6 @@ class Home extends React.Component {
       ? this.state
       : this.props;
 
-    console.log(this.props, this.state);
-
     const renderPrograms = () => {
       if (programs.length < 1) {
         return <div className="no-result-found">No result found</div>;
