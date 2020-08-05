@@ -23,6 +23,15 @@ a {
   margin-bottom: 1rem;
 }
 
+.page-wrapper {
+  max-width: 1440px;
+  padding: 1.5rem;
+
+  @media (min-width: $desktop) {
+    padding: 1.5rem 2rem;
+  }
+}
+
 .header {
   margin-bottom: 1.5rem;
   font-size: 20px;

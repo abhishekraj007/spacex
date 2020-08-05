@@ -1,10 +1,11 @@
 import React from "react";
-import axios from "axios";
-import Head from "next/head";
 import { withRouter } from "next/router";
 
-import Program from "../components/Program";
+import { fetchData } from "../api";
+import CustomHead from "../components/Head";
+import ListItem from "../components/ListItem";
 import Filter from "../components/Filter";
+import Header from "../components/Header";
 
 class Home extends React.Component {
   constructor(props) {
@@ -21,13 +22,14 @@ class Home extends React.Component {
 
     const { year, launch_success, land_success } = filterValue;
     let query = "?limit=50";
-    if (year) query = `${query}&year=${year}`;
+    if (year !== null) query = `${query}&launch_year=${year}`;
     if (launch_success !== null)
       query = `${query}&launch_success=${launch_success}`;
     if (land_success !== null) query = `${query}&land_success=${land_success}`;
     this.setState({ loading: true });
 
     let result = await fetchData(query);
+    console.log("call was made", result);
 
     this.setState(
       {
@@ -42,10 +44,15 @@ class Home extends React.Component {
   };
 
   handleClearFilter = () => {
-    this.setState({
-      programs: [],
-      filterApplied: false,
-    });
+    this.setState(
+      {
+        programs: [],
+        filterApplied: false,
+      },
+      () => {
+        this.props.router.push("/", "/", { shallow: true });
+      }
+    );
   };
 
   render() {
@@ -58,23 +65,19 @@ class Home extends React.Component {
       ? this.state
       : this.props;
 
-    const renderPrograms = () => {
+    const renderListItems = () => {
       if (programs.length < 1) {
-        return <div className="no-result-found">No result found</div>;
+        return <div className="no-result-found">No program found</div>;
       }
       return programs.map((program) => {
-        return <Program key={program.flight_number} {...program} />;
+        return <ListItem key={program.flight_number} {...program} />;
       });
     };
 
     return (
       <div className="page-wrapper">
-        <Head>
-          <title>Spacex Programs</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-
-        <header className="header">SpaceX Lanuch Programs</header>
+        <CustomHead />
+        <Header />
         <main className="main">
           <div className="home-container">
             <Filter
@@ -89,7 +92,7 @@ class Home extends React.Component {
                   <img src="/spinner.gif" alt="loader"></img>
                 </div>
               ) : null}
-              {renderPrograms()}
+              {renderListItems()}
             </div>
           </div>
         </main>
@@ -102,18 +105,7 @@ class Home extends React.Component {
   }
 }
 
-const fetchData = async (query) => {
-  const BASE_URL = "https://api.spacexdata.com/v3/launches";
-  const url = query ? `${BASE_URL}${query}` : BASE_URL;
-
-  try {
-    let res = await axios.get(url);
-    return res.data;
-  } catch (error) {
-    console.log("An error occured: ", error);
-  }
-};
-
+// This is metod is get called once on server
 export async function getServerSideProps() {
   // Do first render by server side
   // Get data from api and return it

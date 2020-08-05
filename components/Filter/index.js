@@ -2,6 +2,10 @@ import React from "react";
 import { YEARS, SUCCESS_PARAMS, INITIAL_FILTER_STATE } from "./constant";
 import { RadioGroup, Radio } from "../RadioButton";
 
+/*
+ * Filter component's data for year, launch/land success is kept
+ * in constant.js file
+ */
 class Filter extends React.Component {
   constructor(props) {
     super(props);
@@ -10,6 +14,7 @@ class Filter extends React.Component {
     };
   }
 
+  // Method to handle filter change and call fetch method from main component
   handleFilterChange = (type, val) => {
     switch (type) {
       case "YEAR":
@@ -33,6 +38,7 @@ class Filter extends React.Component {
     }
   };
 
+  // Method to clear filter and make to default state
   clearFilter = (e) => {
     e.preventDefault();
 
@@ -60,7 +66,7 @@ class Filter extends React.Component {
         <div className="filter-group-header">Launch Year</div>
         <RadioGroup
           name="year"
-          value={year}
+          selectedValue={year}
           onChange={(val) => this.handleFilterChange("YEAR", val)}
         >
           {YEARS.map((value, idx) => (

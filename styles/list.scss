@@ -41,15 +41,16 @@
   margin: 0;
   padding: 0.5rem 0;
   list-style: none;
-  flex: 1 0 100%;
+  flex: 0 0 100%;
 
   @media (min-width: $tablet) {
     padding: 0.5rem;
-    flex: 1 0 50%;
+    flex: 0 0 50%;
+    max-height: 550px;
   }
 
   @media (min-width: $desktop) {
-    flex: 1 0 25%;
+    flex: 0 0 25%;
   }
 
   p {

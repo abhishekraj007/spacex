@@ -5,12 +5,11 @@ $radio-checked-size: 10px;
 $radio-ripple-size: 15px;
 
 .radio {
-  padding: 0 1rem 1rem 0;
-  flex: 1 0 50%;
+  margin: 0 1rem 1rem 0;
+  width: calc(50% - 1rem);
 
   &:nth-child(2n + 2) {
-    padding-right: 0;
-    padding-left: 1rem;
+    margin: 0 0 1rem 1rem;
   }
 
   input[type="radio"] {
@@ -23,6 +22,8 @@ $radio-ripple-size: 15px;
       background-color: $radio-color;
       border-radius: 4px;
       font-size: 14px;
+      cursor: pointer;
+      user-select: none;
     }
 
     &:checked + .label {
