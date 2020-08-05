@@ -30,4 +30,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Screenshot
 
-![App's screenshot](https://raw.githubusercontent.com/abhishekraj007/spacex/master/public/placeholder.jpg)
+![App's screenshot](https://raw.githubusercontent.com/abhishekraj007/spacex/master/public/screenshot.png)
