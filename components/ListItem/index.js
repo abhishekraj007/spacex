@@ -2,7 +2,7 @@ const ListItem = (props) => {
   const {
     mission_name,
     flight_number,
-    links: { mission_patch_small, reddit_launch: article_link },
+    links: { mission_patch_small, wikipedia: article_link },
     mission_id,
     launch_year,
     launch_success,
