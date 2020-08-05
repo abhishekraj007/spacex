@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export",
-    "deploy": "npm run build && npm run export"
+    "test": "jest -u --watch"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -15,5 +14,15 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "sass": "^1.26.10"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.1.0",
+    "@testing-library/react": "^9.4.0",
+    "babel-jest": "^25.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.1.0",
+    "react-test-renderer": "^16.12.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2"
   }
 }
