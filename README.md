@@ -3,6 +3,7 @@
 1. Reactjs
 2. Nextjs boilerplate for Server side rendering
 3. SCSS for styling
+4. Jest and Enzyme for testing React Components
 
 ## Run Project Locally
 
