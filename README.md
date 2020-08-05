@@ -28,6 +28,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 [https://spacex-programs.vercel.app](https://spacex-programs.vercel.app/)
 
-## Screenshot
+## App Screenshot
 
 ![App's screenshot](https://raw.githubusercontent.com/abhishekraj007/spacex/master/public/screenshot.png)
+
+## Lighthouse report
+
+![Lighthouse screenshot](https://raw.githubusercontent.com/abhishekraj007/spacex/master/public/lighthouse-report.png)
