@@ -2,6 +2,7 @@
 
 1. Reactjs
 2. Nextjs boilerplate for Server side rendering
+3. SCSS for styling
 
 ## Run Project Locally
 
