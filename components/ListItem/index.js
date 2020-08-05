@@ -9,9 +9,8 @@ const ListItem = (props) => {
     land_success,
     launch_landing,
   } = props;
-  const placeholderImg = "/placeholder.jpg";
 
-  console.log(land_success, launch_success, launch_landing);
+  const placeholderImg = "/placeholder.jpg";
 
   return (
     <li className="program-item">

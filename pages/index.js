@@ -6,6 +6,7 @@ import CustomHead from "../components/Head";
 import ListItem from "../components/ListItem";
 import Filter from "../components/Filter";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 class Home extends React.Component {
   constructor(props) {
@@ -18,8 +19,6 @@ class Home extends React.Component {
   }
 
   handleFilterChange = async (filterValue) => {
-    console.log("apply filter", filterValue);
-
     const { year, launch_success, land_success } = filterValue;
     let query = "?limit=50";
     if (year !== null) query = `${query}&launch_year=${year}`;
@@ -29,7 +28,6 @@ class Home extends React.Component {
     this.setState({ loading: true });
 
     let result = await fetchData(query);
-    console.log("call was made", result);
 
     this.setState(
       {
@@ -97,9 +95,7 @@ class Home extends React.Component {
           </div>
         </main>
 
-        <footer className="footer">
-          <strong>Developed By:</strong> Abhishek Raj
-        </footer>
+        <Footer />
       </div>
     );
   }
