@@ -22,6 +22,12 @@ yarn dev
 #or
 npm install
 npm run dev
+
+- To run test
+
+yarn test
+#or
+npm run test
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
